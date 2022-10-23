@@ -1,45 +1,48 @@
 import osztas
 import szorzas
-
-print("[1] Összeadás")
-print("[2] Kivonás")
-print("[3] Szorzás")
-print("[4] Osztás")
-val = int(input("Melyik jatekkal akarsz játszani?: "))
-while (val<1) | (val>4):
-    print("NINCS ilyen számú játék! \n Kérek Válasz újat!")
-    print("[1] Összeadás")
-    print("[2] Kivonás")
-    print("[3] Szorzás")
-    print("[4] Osztás")
-    val = int(input("Melyik jatekkal akarsz játszani?: "))
-
 import osszeadas
 import kivonas
 import valasztas
+import os
+from time import sleep
 
-if(val == 1):
+valasztas.valasztas()
+sleep(1)
+os.system('cls')
+if(valasztas.val == 1):
     osszeadas.osszead()
-if (val==2):
+if (valasztas.val==2):
     kivonas.kivonas()
-if (val == 3):
+if (valasztas.val == 3):
         szorzas.szorzas()
-if (val == 4):
+if (valasztas.val == 4):
         osztas.osztas()
-
+sleep(1)
+os.system('cls')
 print("A játék végetért!!")
+print()
+sleep(1)
 valasz = input("Akarsz új játékot indítani['igen' vagy 'nem']?: ")
+os.system('cls')
 while (str(valasz) == "igen"):
     print()
+
     valasztas.valasztas()
-    if (val == 1):
+
+    if (valasztas.val == 1):
         osszeadas.osszead()
-    if (val == 2):
+    if (valasztas.val == 2):
         kivonas.kivonas()
-    if (val == 3):
+    if (valasztas.val == 3):
         szorzas.szorzas()
-    if (val == 4):
+    if (valasztas.val == 4):
         osztas.osztas()
+    sleep(1)
+    os.system('cls')
     print("A játék végetért!!")
+    sleep(1)
     valasz = input("Akarsz új játékot indítani[igen' vagy 'nem']?: ")
-print("A játék kilép")
+    os.system('cls')
+print("Köszönjök hogy velünk játszottál! \nA játék kilép 3 másodpercen belül")
+sleep(3)
+exit(0)
